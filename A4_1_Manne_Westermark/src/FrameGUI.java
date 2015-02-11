@@ -88,7 +88,7 @@ public class FrameGUI extends JFrame {
 		btnNewHuman.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(textField.getText().length() < 3){
-					textArea_1.setText("A name must be at least 3 letters");
+					textArea_1.setText("Ett namn måste ha minst 3 bokstäver");
 				} else {
 					human = new Human(textField.getText());
 					textArea_1.setText("");
@@ -102,7 +102,7 @@ public class FrameGUI extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(human == null){
-					textArea_1.setText("ERROR, What is your name?");
+					textArea_1.setText("ERROR, Vad heter du?");
 				} else{
 					dog = new Dog(textField_1.getText());
 					human.buyDog(dog);
