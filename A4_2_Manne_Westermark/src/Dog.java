@@ -6,6 +6,7 @@ public class Dog extends Mammal {
 		this.stupid = stupid;
 	}
 
+	//På denna måste du även inkludera att du sätter en friendlyName
 	public Dog(String friendlyName, String latinName, int gestationTime, boolean stupid) {
 		super(latinName, gestationTime);
 		this.stupid = stupid;

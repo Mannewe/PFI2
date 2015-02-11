@@ -13,6 +13,7 @@ public Animal(String latinName){
 //abstract getInfo(){
 	//return??
 //}
+//Yes det ska bara vara "public abstract String getInfo();" i denna klassen
 
 
 public String getFriendlyName() {
