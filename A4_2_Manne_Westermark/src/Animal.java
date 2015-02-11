@@ -3,19 +3,18 @@ public abstract class Animal {
 private String latinName;
 private String friendlyName;
 
-public Animal(String latinName, String friendlyName){
+public Animal(String latinName){
  this.latinName = latinName;
- this.friendlyName = friendlyName;
+
  
 }
 
 
-public String getLatinName() {
-	return latinName;
-}
-public void setLatinName(String latinName) {
-	this.latinName = latinName;
-}
+//abstract getInfo(){
+	//return??
+//}
+
+
 public String getFriendlyName() {
 	return friendlyName;
 }
