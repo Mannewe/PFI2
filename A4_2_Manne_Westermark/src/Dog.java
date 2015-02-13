@@ -2,6 +2,7 @@ public class Dog extends Mammal {
 	private boolean stupid;
 
 
+
 	public Dog(String friendlyName, String latinName, int gestationTime, boolean stupid) {
 		super(friendlyName, latinName, gestationTime);
 		this.stupid = stupid;
@@ -12,7 +13,7 @@ public class Dog extends Mammal {
 	}
 
 	@Override
-	String getInfo() {
+	public String getInfo() {
 		String info = "";
 		if(stupid){
 			info = "Hunden " + super.getFriendlyName() + "/" + this.getLatinName()+ " har en dräktighettid på " + this.getGestationTime()+ "månader och är puckad.\n";
@@ -21,7 +22,7 @@ public class Dog extends Mammal {
 		}
 		return info;
 	}
-	
-	
-	
+
+
+
 }

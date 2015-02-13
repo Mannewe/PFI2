@@ -115,6 +115,7 @@ public class FrameGUI extends JFrame {
 		JButton btnNewButton_1 = new JButton("Print Info");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				//kolla null check på human
 				textArea.setText(human.getInfo());
 			}
 		});

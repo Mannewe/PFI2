@@ -15,13 +15,13 @@ public class Cat extends Mammal{
 	}
 
 	@Override
-	String getInfo() {
+	public String getInfo() {
 		String info = "";
-		
+
 		info = "katten " + this.getFriendlyName() + "/" + this.getLatinName() + " har en dräktighetstid på " + this.getGestationTime() + " månader och har " + this.getNumberOfLives()  + " liv.\n";
-		
+
 		return info;
 	}
-	
-	
+
+
 }

@@ -9,9 +9,9 @@ import javax.swing.JTextArea;
 
 
 public class DjurGUI extends JFrame {
-	
+
 	private ArrayList <Animal> djur = new ArrayList<Animal>();
-	
+
 	private JPanel contentPane;
 
 	/**
@@ -40,22 +40,22 @@ public class DjurGUI extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
+
 		JTextArea txtrText = new JTextArea();
 		txtrText.setBounds(22, 21, 579, 339);
 		contentPane.add(txtrText);
-		
+
 		djur.add(new Snake("Giftorm","snakus giftusus", true));
 		djur.add(new Dog("Pudel","Doggus pudlus", 3, true));
 		djur.add(new Cat("skogskatt","kattus skogus", 5, 9));
 		djur.add(new Dog("lurvis","lurvsus smartus",4,false));
 		djur.add(new Snake("snällorm","kobrus snellisusmus", false));
 		djur.add(new Cat("klenkatt","kattus klenus", 2, 1));
-		
+
 		for(Animal i: djur){
 			txtrText.append(i.getInfo() + "\n");
-			
+
 		}
-		
+
 	}
 }

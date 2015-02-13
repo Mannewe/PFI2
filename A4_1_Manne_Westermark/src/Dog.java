@@ -10,6 +10,7 @@ public class Dog {
 	}
 
 	//får man ha den här?
+	//Jad�
 	public String getName() {
 		return this.name;
 	}

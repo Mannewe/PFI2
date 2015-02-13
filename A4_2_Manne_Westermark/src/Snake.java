@@ -1,20 +1,20 @@
 
 public class Snake extends Animal {
-private boolean poisonus;
+	private boolean poisonus;
 
 	public Snake(String friendlyName, String latinName, boolean poisonous){
 		super(friendlyName, latinName);
 		this.poisonus = poisonous;
 	}
-	
+
 	public boolean isPoisonus(){
 		return this.poisonus;
 	}
 
 	@Override
-	String getInfo() {
+	public String getInfo() {
 		String info = "";
-		
+
 		if(isPoisonus()){
 			info = "ormen " + this.getFriendlyName() + "/" + this.getLatinName() + " är giftig. \n";
 		} else{
@@ -22,5 +22,5 @@ private boolean poisonus;
 		}
 		return info;
 	}
-	
+
 }
