@@ -18,7 +18,7 @@ public class Cat extends Mammal{
 	String getInfo() {
 		String info = "";
 		
-		info = "katten " + super.getFriendlyName() + "/" + super.getLatinName() + " har en dräktighetstid på " + this.getGestationTime() + " månader och har " + this.getNumberOfLives()  + " liv.\n";
+		info = "katten " + this.getFriendlyName() + "/" + this.getLatinName() + " har en dräktighetstid på " + this.getGestationTime() + " månader och har " + this.getNumberOfLives()  + " liv.\n";
 		
 		return info;
 	}
