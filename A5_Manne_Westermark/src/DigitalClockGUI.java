@@ -7,7 +7,9 @@ import javax.swing.border.EmptyBorder;
 
 
 public class DigitalClockGUI extends JFrame {
-
+	
+	//här ska du ha en ClockLogic variabel
+	
 	private JPanel contentPane;
 
 	/**
@@ -39,3 +41,5 @@ public class DigitalClockGUI extends JFrame {
 	}
 
 }
+
+//här ska du ha metoderna "setTimeOnLabel(String time)" och "alarm(boolean activate)""
