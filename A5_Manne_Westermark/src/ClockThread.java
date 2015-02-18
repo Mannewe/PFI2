@@ -6,8 +6,12 @@ public ClockThread(ClockInterface clockInterface){
 	this.clockInterface = clockInterface;
 }
 
+@Override
 public void run(){
-
+	while(true){
+		
+	}
+	
 }
 
 }
