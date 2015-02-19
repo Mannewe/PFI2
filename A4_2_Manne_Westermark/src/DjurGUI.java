@@ -49,7 +49,7 @@ public class DjurGUI extends JFrame {
 		djur.add(new Dog("Pudel","Doggus pudlus", 3, true));
 		djur.add(new Cat("skogskatt","kattus skogus", 5, 9));
 		djur.add(new Dog("lurvis","lurvsus smartus",4,false));
-		djur.add(new Snake("snällorm","kobrus snellisusmus", false));
+		djur.add(new Snake("snällorm","kobrus snällisusmus", false));
 		djur.add(new Cat("klenkatt","kattus klenus", 2, 1));
 
 		for(Animal i: djur){

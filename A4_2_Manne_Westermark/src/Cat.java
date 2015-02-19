@@ -22,6 +22,4 @@ public class Cat extends Mammal{
 
 		return info;
 	}
-
-
 }

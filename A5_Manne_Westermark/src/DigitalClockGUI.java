@@ -12,7 +12,9 @@ import java.awt.event.ActionEvent;
 
 
 public class DigitalClockGUI extends JFrame {
-
+	
+	//h�r ska du ha en ClockLogic variabel
+	
 	private JPanel contentPane;
 	private JTextField txtHours;
 	private JTextField txtMinute;
@@ -79,3 +81,6 @@ public class DigitalClockGUI extends JFrame {
 		contentPane.add(lblMinutes);
 	}
 }
+
+
+//h�r ska du ha metoderna "setTimeOnLabel(String time)" och "alarm(boolean activate)""

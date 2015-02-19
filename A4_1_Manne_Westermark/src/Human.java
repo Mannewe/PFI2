@@ -21,14 +21,14 @@ public class Human {
 
 		if(dog != null){
 
-			s = getName() +" " +"äger en hund som heter" + " "+ dog.getName() + ".";
-			return s;
+			s = getName() + " äger en hund som heter " + dog.getName() + ".";
+			
 
 		}else{
 
-			s = getName() + " " + "äger inte en hund.";
-			return s;
+			s = getName() + " äger inte en hund.";
+			
 		}
-
+		return s;
 	}
 }

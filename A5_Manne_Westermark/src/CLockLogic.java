@@ -4,7 +4,9 @@ public class CLockLogic implements ClockInterface{
 	private int hours;
 	private int minute;
 	
-	public CLockLogic(DigitalClockGUI clockInterface) {
+	//d�p den g�rna inte till interface d� det �r GUIt som ska in h�r och s�ttas till instansen av ClockLogic
+	public CLockLogic(DigitalClockGUI clockIn) {
+
 	
 	}
 	
@@ -14,10 +16,13 @@ public class CLockLogic implements ClockInterface{
 	}
 	
 	public void clearAlarm(){
+		//h�r ska du cleara det alarmet som �r satt
 		this.hours = hours;
 		this.minute = minute;
 	}
-
+	
+	//denna ska overrideas
+	@Override
 	public void update(int hours, int minute, int second) {
 		
 		
