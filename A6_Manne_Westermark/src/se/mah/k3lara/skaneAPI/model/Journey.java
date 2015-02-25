@@ -6,7 +6,7 @@ import java.util.Calendar;
  * @author K3LARA
  *
  */
-public class Journey {
+public class Journey{
 	private Calendar depDateTime;
 	private Calendar arrDateTime;
 	private String noOfChanges;
@@ -103,6 +103,9 @@ public class Journey {
 	public void setEndStation(Station endStation) {
 		this.endStation = endStation;
 	}
-
+	
+	public void run(){
+		
+	}
 	
 }

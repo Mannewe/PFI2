@@ -6,7 +6,7 @@ import java.util.ArrayList;
  * @author K3LARA
  *
  */
-public class Journeys {
+public class Journeys{
 	private ArrayList<Journey> journeys;
 	
 	//Creates a list of journeys
@@ -27,4 +27,5 @@ public class Journeys {
 	public void clearJourneys() {
 		this.journeys.clear();
 	}
+	
 }
