@@ -6,10 +6,10 @@ package se.mah.k3lara.skaneAPI.model;
  *
  */
 public class Station implements Comparable<Station>{
-	private String stationNbr;
-	private String stationName;
-	private double latitude; //X coordinate, RT90
-	private double longitude; //Y coordinate, RT90
+	public String stationNbr;
+	public String stationName;
+	public double latitude; //X coordinate, RT90
+	public double longitude; //Y coordinate, RT90
 	
 	public Station(String stationName,String stationNbr) {
 		this.stationName = stationName;

@@ -15,7 +15,9 @@ import javax.swing.border.EtchedBorder;
 import se.mah.k3lara.skaneAPI.control.Constants;
 import se.mah.k3lara.skaneAPI.model.Journey;
 import se.mah.k3lara.skaneAPI.model.Journeys;
+import se.mah.k3lara.skaneAPI.model.JourneysThread;
 import se.mah.k3lara.skaneAPI.model.Station;
+import se.mah.k3lara.skaneAPI.model.StationsThread;
 import se.mah.k3lara.skaneAPI.xmlparser.Parser;
 
 import java.awt.event.ActionListener;
@@ -29,12 +31,20 @@ import javax.swing.SwingConstants;
 
 public class GUI extends JFrame {
 
-	ArrayList<Station> searchStations = new ArrayList<Station>();
-	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField txtFran;
-	private JTextField txtTill;
+	public ArrayList<Station> searchStations;
+	public JPanel contentPane;
+	public JTextField textField;
+	public JTextField txtFran;
+	public JTextField txtTill;
+	public JTextArea txtrResult;
+	public JTextArea txtrResultat;
 
+	GUI g = this;
+	Parser p = new Parser();
+	
+	Thread Tj = new JourneysThread(p,this);
+	Thread Ts = new StationsThread(p,this);
+	
 	/**
 	 * Launch the application.
 	 */
@@ -55,6 +65,8 @@ public class GUI extends JFrame {
 	 * Create the frame.
 	 */
 	public GUI() {
+		
+	
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 664, 478);
 		contentPane = new JPanel();
@@ -82,7 +94,7 @@ public class GUI extends JFrame {
 		scrollPane.setBounds(6, 18, 311, 276);
 		panel_2.add(scrollPane);
 		
-		final JTextArea txtrResult = new JTextArea();
+		txtrResult = new JTextArea();
 		scrollPane.setViewportView(txtrResult);
 		
 		JPanel panel_1 = new JPanel();
@@ -120,23 +132,15 @@ public class GUI extends JFrame {
 		scrollPane_1.setBounds(6, 18, 305, 222);
 		panel_3.add(scrollPane_1);
 		
-		final JTextArea txtrResultat = new JTextArea();
+		txtrResultat = new JTextArea();
 		scrollPane_1.setViewportView(txtrResultat);
 		
 		
 		JButton btnSok = new JButton("Sök Resa");
 		btnSok.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String searchURL = Constants.getURL(txtFran.getText() + "",txtTill.getText(),1);
-				Journeys journeys = Parser.getJourneys(searchURL);
-				for  (Journey journey : journeys.getJourneys()){
-					txtrResultat.setText(journey.getStartStation()+" - ");
-					txtrResultat.append(journey.getEndStation()+"");
-					txtrResultat.append(" : "+journey.getLineOnFirstJourney());
-					String time = journey.getDepDateTime().get(Calendar.HOUR_OF_DAY)+":"+journey.getDepDateTime().get(Calendar.MINUTE);
-					txtrResultat.append("\nDeparts " + time +" that is in "+journey.getTimeToDeparture()+ " minutes. \nAnd it is "+journey.getDepTimeDeviation()+" min late");
-					
-				} 
+				Thread Tj = new JourneysThread(p,g);
+				Tj.start();
 			}
 		});
 		btnSok.setBounds(98, 168, 117, 29);
@@ -146,10 +150,8 @@ public class GUI extends JFrame {
 		btnSearch.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//hämtar alla stationer som innehåller "Malm" och stoppar in de i arraylisten searchStations
-				searchStations.addAll(Parser.getStationsFromURL(textField.getText()));
-				for (Station s: searchStations){
-					txtrResult.append(s.getStationName() +" number:" +s.getStationNbr() + "\n");
-				}
+				Thread Ts = new StationsThread(p,g);
+				Ts.start();
 			}
 		});
 		btnSearch.setBounds(103, 106, 117, 29);
