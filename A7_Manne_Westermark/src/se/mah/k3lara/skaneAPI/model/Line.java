@@ -6,6 +6,7 @@ public class Line {
 	private String line;
 	private Calendar depTime;
 	private String depTimeDeviation;
+	private String stopPoint;
 	public Line() {
 	}
 	public String getLine() {
@@ -25,6 +26,12 @@ public class Line {
 	}
 	public void setDepTimeDeviation(String depTimeDeviation) {
 		this.depTimeDeviation = depTimeDeviation;
+	}
+	public String getStopPoint() {
+		return stopPoint;
+	}
+	public void setStopPoint(String stopPoint) {
+		this.stopPoint = stopPoint;
 	}
 	
 	//More methods here for the rest of the tags
