@@ -8,24 +8,25 @@ import se.mah.k3lara.skaneAPI.model.Lines;
 import se.mah.k3lara.skaneAPI.model.Station;
 import se.mah.k3lara.skaneAPI.view.GUI;
 
-public class UpdateThread extends Thread{
+public class UpdateThread extends Thread {
 	private Parser parser;
 	private GUI gui;
-	
-	public UpdateThread(Parser p, GUI g){
+
+	public UpdateThread(Parser p, GUI g) {
 		this.parser = p;
 		this.gui = g;
 	}
-	
-	public void run(){
-		while(true){
+
+	public void run() {
+		while (true) {
+			gui.updateTimes();
+			System.out.println("Updating");
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(30000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			gui.updateTimes();
 		}
 	}
 
